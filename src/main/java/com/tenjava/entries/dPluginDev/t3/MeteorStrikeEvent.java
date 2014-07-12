@@ -21,7 +21,7 @@ public class MeteorStrikeEvent {
 	    	loc.getBlock().setType(Material.GRAVEL);
 	    }
 	    
-	    Location explodeLoc = new Location(Config.enabledWorld, meteorX, meteorCenter.getBlockY()-1, meteorZ);
+	    Location explodeLoc = new Location(Config.enabledWorld, meteorX, meteorCenter.getBlockY()-3, meteorZ);
 	    
 	    while (!explodeLoc.getBlock().getType().isSolid()){
 	    	explodeLoc.add(0, -1, 0);
