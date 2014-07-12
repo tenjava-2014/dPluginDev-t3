@@ -10,8 +10,6 @@ This is a submission for the 2014 ten.java contest.
 - __MC Version:__ 1.7.9 (latest Bukkit beta)
 - __Stream URL:__ None
 
-<!-- put chosen theme above -->
-
 ---------------------------------------
 
 Compilation
