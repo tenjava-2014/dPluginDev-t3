@@ -1,9 +1,15 @@
 package com.tenjava.entries.dPluginDev.t3;
 
-public class MeteorStrikeEvent {
+import java.util.Random;
 
-	/*
-	 * Spawn meteor object in the sky that hurdles toward random location on the ground
-	 *  and creates an explosion, fire, etc. 
-	 */
+import org.bukkit.World;
+
+public class MeteorStrikeEvent {
+	
+	Random rX = new Random();
+	Random rZ = new Random();
+
+	public static void strikeMeteor(World world){
+		
+	}
 }
