@@ -29,7 +29,7 @@ Usage
 -----
 
 1. Install plugin
-2. Do things with it
-
-<!-- Hi, dPluginDev! This is the default README for every ten.java submission. -->
-<!-- We encourage you to edit this README with some information about your submission – keep in mind you'll be scored on documentation! -->
+2. Restart the server
+3. Edit the config to your liking
+4. Every [x] seconds/minutes a meteor will strike the world
+   within [x] amount of blocks away from the spawn.

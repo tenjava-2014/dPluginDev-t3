@@ -12,8 +12,8 @@ public class EventManager{
 		eventCaller = new BukkitRunnable(){
 			public void run() {
 				Random r = new Random();
-				if (r.nextInt(100) < 30){
-					//Meteor Strike
+				if (r.nextInt(100) < Config.eventChance){
+					MeteorStrikeEvent.strikeMeteor(Config.enabledWorld);
 				}
 			}
 		};
