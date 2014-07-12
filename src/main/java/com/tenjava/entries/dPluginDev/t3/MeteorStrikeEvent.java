@@ -21,10 +21,10 @@ public class MeteorStrikeEvent {
 	    	loc.getBlock().setType(Material.GRAVEL);
 	    }
 	    
-	    Location explodeLoc = new Location(Config.enabledWorld, meteorX, meteorCenter.getBlockY()-3, meteorZ);
+	    Location explodeLoc = new Location(Config.enabledWorld, meteorX, meteorCenter.getBlockY()-Config.meteorSizeRadius, meteorZ);
 	    
 	    while (!explodeLoc.getBlock().getType().isSolid()){
-	    	explodeLoc.add(0, -1, 0);
+	    	explodeLoc.add(0, -0.1, 0);
 	    }
 	    if (explodeLoc.getBlock().getType().isSolid()){
 	    	Config.enabledWorld.createExplosion(explodeLoc, Config.explosionPower);
