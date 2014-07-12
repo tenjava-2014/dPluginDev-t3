@@ -9,5 +9,6 @@ public class Config {
 	public static int eventRepeatDelay = 300;
 	public static int meteorSpawnRadius = 500;
 	public static int meteorSpawnHeight = 300;
+	public static int meteorSizeRadius = 5;
 	public static World enabledWorld = Bukkit.getServer().getWorld("world");
 }

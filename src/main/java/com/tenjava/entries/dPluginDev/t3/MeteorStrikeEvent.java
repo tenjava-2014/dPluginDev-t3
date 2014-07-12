@@ -12,13 +12,14 @@ public class MeteorStrikeEvent {
 	
 	private static Random rand = new Random();
 
-	@SuppressWarnings("deprecation")
 	public static void strikeMeteor(World world){
 		int meteorX = rand.nextInt((Config.meteorSpawnRadius - world.getSpawnLocation().getBlockX()) + 1) + world.getSpawnLocation().getBlockX();
 	    int meteorZ = rand.nextInt((Config.meteorSpawnRadius - world.getSpawnLocation().getBlockZ()) + 1) + world.getSpawnLocation().getBlockZ();
+	    Location meteorCenter = new Location(Config.enabledWorld, (double) meteorX, (double) Config.meteorSpawnHeight, (double) meteorZ);
 	    
-	    //world.spawnFallingBlock(new Location(world, (double) meteorX, (double) Config.meteorSpawnHeight, (double) meteorZ), Material.STONE, (byte) 0);
-	    
+	    for (Location loc : generateSphere(meteorCenter, Config.meteorSizeRadius, false)){
+	    	loc.getBlock().setType(Material.GRAVEL);
+	    }
 	}
 	
 	public static List<Location> generateSphere(Location centerBlock, int radius, boolean hollow){
@@ -30,7 +31,12 @@ public class MeteorStrikeEvent {
 		for (int x = bX - radius; x <= bX + radius; x++){
 			for (int y = bY - radius; y <= bY + radius; y++){
 				for (int z = bZ - radius; z <= bZ + radius; z++){
+					double distance = ((bX - x)*(bX-x)) + ((bZ - z)*(bZ-z)) + ((bY - y)*(bY-y));
 					
+					if (distance < radius * radius && !(hollow && distance < ((radius - 1)*(radius-1)))){
+						Location loc = new Location(centerBlock.getWorld(), x, y, z);
+						circleBlocks.add(loc);
+					}
 				}
 			}
 		}

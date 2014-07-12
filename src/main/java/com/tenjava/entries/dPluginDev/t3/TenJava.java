@@ -1,6 +1,8 @@
 package com.tenjava.entries.dPluginDev.t3;
 
 import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,4 +21,10 @@ public class TenJava extends JavaPlugin {
 		System.out.println("Plugin has been successfully disabled!");
 	}
 	
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String args[]){
+		if (cmd.getName().equalsIgnoreCase("meteor")){
+			MeteorStrikeEvent.strikeMeteor(Config.enabledWorld);
+		}
+		return true;
+	}
 }
