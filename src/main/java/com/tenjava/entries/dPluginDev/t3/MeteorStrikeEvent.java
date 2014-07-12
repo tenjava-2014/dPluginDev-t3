@@ -26,6 +26,9 @@ public class MeteorStrikeEvent {
 	    while (!explodeLoc.getBlock().getType().isSolid()){
 	    	explodeLoc.add(0, -1, 0);
 	    }
+	    if (explodeLoc.getBlock().getType().isSolid()){
+	    	Config.enabledWorld.createExplosion(explodeLoc, Config.explosionPower);
+	    }
 	}
 	
 	public static List<Location> generateSphere(Location centerBlock, int radius, boolean hollow){

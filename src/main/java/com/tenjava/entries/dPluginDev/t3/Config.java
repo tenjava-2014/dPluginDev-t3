@@ -10,5 +10,6 @@ public class Config {
 	public static int meteorSpawnRadius = 50;
 	public static int meteorSpawnHeight = 300;
 	public static int meteorSizeRadius = 5;
+	public static float explosionPower = 10;
 	public static World enabledWorld = Bukkit.getServer().getWorld("world");
 }
