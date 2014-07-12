@@ -26,8 +26,11 @@ public class MeteorStrikeEvent {
 	    while (!explodeLoc.getBlock().getType().isSolid()){
 	    	explodeLoc.subtract(0, 1, 0);
 	    }
+	    while (explodeLoc.getBlock().getType().isSolid() && explodeLoc.getBlock().getType() != Material.GRAVEL){
+	    	explodeLoc.add(0, 1, 0);
+	    }
 	
-	    if (explodeLoc.getBlock().getType().isSolid()){
+	    if (explodeLoc.getBlock().getType() == Material.GRAVEL){
 	    	Config.enabledWorld.createExplosion(explodeLoc, Config.explosionPower);
 	    }
 	}

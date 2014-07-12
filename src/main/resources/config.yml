@@ -1,0 +1,24 @@
+# dPluginDev's Ten.Java 2014 Entry
+#
+# --------------------------------
+
+# Percent chance of meteor spawning
+eventChance = 5;
+
+# Delay between opportunities of a meteor strike
+eventRepeatDelay = 300;
+
+# Block radius from world spawn that a meteor can spawn
+meteorSpawnRadius = 10;
+
+# Height that a meteor spawns at
+meteorSpawnHeight = 200;
+
+# Size of a meteor
+meteorSizeRadius = 5;
+
+# Power of the impact explosion (ex. 1 TNT = 4)
+explosionPower = 10;
+
+# World that has meteors enabled
+enabledWorld = world;

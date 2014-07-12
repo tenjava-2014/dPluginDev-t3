@@ -13,6 +13,8 @@ public class TenJava extends JavaPlugin {
 		plugin = this;
 		Bukkit.getServer().getPluginManager().registerEvents(new PlayerWarning(), this);
 		System.out.println("Plugin has been successfully enabled!");
+		getConfig().options().copyDefaults(true);
+		saveDefaultConfig();
 	}
 	
 	public void onDisable(){
