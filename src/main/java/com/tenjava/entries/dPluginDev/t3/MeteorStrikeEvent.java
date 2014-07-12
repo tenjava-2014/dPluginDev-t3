@@ -24,7 +24,7 @@ public class MeteorStrikeEvent {
 	    Location explodeLoc = new Location(Config.enabledWorld, meteorX, meteorCenter.getBlockY()-Config.meteorSizeRadius, meteorZ);
 	    
 	    while (!explodeLoc.getBlock().getType().isSolid()){
-	    	explodeLoc.subtract(0, 0.00001, 0);
+	    	explodeLoc.subtract(0, 0.0000001, 0);
 	    }
 	
 	    if (explodeLoc.getBlock().getType().isSolid()){
