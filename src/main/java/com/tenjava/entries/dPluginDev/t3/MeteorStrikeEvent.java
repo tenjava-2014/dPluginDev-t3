@@ -7,10 +7,13 @@ import java.util.Random;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class MeteorStrikeEvent {
 	
 	private static Random rand = new Random();
+	private static BukkitRunnable eventCaller;
+
 
 	public static void strikeMeteor(World world){
 		int meteorX = rand.nextInt((Config.meteorSpawnRadius - world.getSpawnLocation().getBlockX()) + 1) + world.getSpawnLocation().getBlockX();
@@ -21,11 +24,21 @@ public class MeteorStrikeEvent {
 	    	loc.getBlock().setType(Material.GRAVEL);
 	    }
 	    
-	    Location explodeLoc = new Location(Config.enabledWorld, meteorX, meteorCenter.getBlockY()-Config.meteorSizeRadius, meteorZ);
+	    final Location explodeLoc = new Location(Config.enabledWorld, meteorX, meteorCenter.getBlockY()-Config.meteorSizeRadius, meteorZ);
 	    
-	    while (!explodeLoc.getBlock().getType().isSolid()){
-	    	explodeLoc.add(0, -0.000000001, 0);
-	    }
+	    //while (!explodeLoc.getBlock().getType().isSolid()){
+	    	//explodeLoc.subtract(0, 0.01, 0);
+	    //}
+	    
+	    eventCaller = new BukkitRunnable(){
+			public void run() {
+				if (!explodeLoc.getBlock().getType().isSolid()){
+					explodeLoc.subtract(0, 1, 0);
+				}
+			}
+		};
+		eventCaller.runTaskTimer(TenJava.plugin, 20L, 20L);
+	    
 	    if (explodeLoc.getBlock().getType().isSolid()){
 	    	Config.enabledWorld.createExplosion(explodeLoc, Config.explosionPower);
 	    }
