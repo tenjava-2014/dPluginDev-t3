@@ -23,11 +23,17 @@ Maven will download all required dependencies and build a ready-for-use plugin p
 
 ---------------------------------------
 
+Features
+-----
+
+- A meteor will strike the minecraft world to make survival players extra fearful as their lives depend on pure chance!
+- Extremely configurable: How often and how likely a meteor can spawn is up to you, as well as its size and indefinite        location. Also, the impact creates an explosion with the power that you decide!
+- Warns players when they join that they should be on watch for any meteors, creating suspense and excitement!
+
 Usage
 -----
 
-1. Install plugin
-2. Restart the server
-3. Edit the config to your liking
-4. Every [x] seconds/minutes a meteor will strike the world
-   within [x] amount of blocks away from the spawn.
+1. Install plugin.
+2. Restart the server.
+3. Edit the config to your liking.
+4. Wait and hope you do not cross the meteor's path!
