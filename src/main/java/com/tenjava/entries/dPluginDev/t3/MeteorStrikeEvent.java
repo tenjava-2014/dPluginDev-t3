@@ -23,21 +23,13 @@ public class MeteorStrikeEvent {
 	    
 	    Location explodeLoc = new Location(Config.enabledWorld, meteorX, meteorCenter.getBlockY()-Config.meteorSizeRadius, meteorZ);
 	    
-	  //  while (!explodeLoc.getBlock().getType().isSolid()){
-	    //	explodeLoc = explodeLoc.subtract(0, 0.01, 0);
-	  //  }
-	    
-	    if (explodeLoc != meteorCenter) {
-	        do {
-	        	explodeLoc = explodeLoc.subtract(0, 0.1, 0);
-	        } while(!explodeLoc.getBlock().getType().isSolid());
-	    } else {
+	    while (!explodeLoc.getBlock().getType().isSolid()){
+	    	explodeLoc = explodeLoc.subtract(0, 0.01, 0);
+	    }
+	
+	    if (explodeLoc.getBlock().getType().isSolid()){
 	    	Config.enabledWorld.createExplosion(explodeLoc, Config.explosionPower);
 	    }
-	    
-	   // if (explodeLoc.getBlock().getType().isSolid()){
-	    	//Config.enabledWorld.createExplosion(explodeLoc, Config.explosionPower);
-	    //}
 	}
 	
 	public static List<Location> generateSphere(Location centerBlock, int radius, boolean hollow){
