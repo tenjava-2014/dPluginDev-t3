@@ -25,7 +25,14 @@ public class MeteorStrikeEvent {
 	    
 	    while (!explodeLoc.getBlock().getType().isSolid()){
 	    	explodeLoc.subtract(0, 0.1, 0);
-	    	return;
+	    }
+	    
+	    if (explodeLoc != meteorCenter) {
+	        do {
+	        	explodeLoc.subtract(0, 0.1, 0);
+	        } while(!explodeLoc.getBlock().getType().isSolid());
+	    } else {
+	    	Config.enabledWorld.createExplosion(explodeLoc, Config.explosionPower);
 	    }
 	    
 	    if (explodeLoc.getBlock().getType().isSolid()){
