@@ -12,6 +12,6 @@ public class PlayerWarning implements Listener{
 	public void onJoin(PlayerJoinEvent e){
 		Player p = e.getPlayer();
 		
-		p.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + "[" + ChatColor.GOLD + "" + ChatColor.BOLD + "!" + ChatColor.RED + "" + ChatColor.BOLD + "] " + ChatColor.GRAY + "" + ChatColor.BOLD + "Be carefule, citizen, we have recieved warnings of a meteor strike in our future!");
+		p.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + "[" + ChatColor.YELLOW + "" + ChatColor.BOLD + "!" + ChatColor.RED + "" + ChatColor.BOLD + "] " + ChatColor.GRAY + "" + ChatColor.BOLD + "Be carefule, citizen, we have recieved warnings of a meteor strike in our future!");
 	}
 }

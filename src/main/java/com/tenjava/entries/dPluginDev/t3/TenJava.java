@@ -3,17 +3,15 @@ package com.tenjava.entries.dPluginDev.t3;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class TenJava extends JavaPlugin {
 	
-	static PluginManager pm = Bukkit.getServer().getPluginManager();
 	public static TenJava plugin;
 	
 	public void onEnable(){
 		plugin = this;
-		pm.registerEvents(new PlayerWarning(), this);
+		Bukkit.getServer().getPluginManager().registerEvents(new PlayerWarning(), this);
 		System.out.println("Plugin has been successfully enabled!");
 	}
 	
@@ -24,6 +22,7 @@ public class TenJava extends JavaPlugin {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String args[]){
 		if (cmd.getName().equalsIgnoreCase("meteor")){
 			MeteorStrikeEvent.strikeMeteor(Config.enabledWorld);
+			sender.sendMessage("RUUUUNN!!");
 		}
 		return true;
 	}
