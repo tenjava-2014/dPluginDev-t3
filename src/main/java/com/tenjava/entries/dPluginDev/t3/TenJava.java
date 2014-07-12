@@ -11,6 +11,7 @@ public class TenJava extends JavaPlugin {
 	
 	public void onEnable(){
 		plugin = this;
+		pm.registerEvents(new PlayerWarning(), this);
 		System.out.println("Plugin has been successfully enabled!");
 	}
 	

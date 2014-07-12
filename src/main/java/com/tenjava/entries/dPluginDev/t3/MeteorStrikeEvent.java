@@ -16,5 +16,6 @@ public class MeteorStrikeEvent {
 	    int meteorZ = rand.nextInt((Config.meteorSpawnRadius - world.getSpawnLocation().getBlockZ()) + 1) + world.getSpawnLocation().getBlockZ();
 	    
 	    world.spawnFallingBlock(new Location(world, (double) meteorX, (double) Config.meteorSpawnHeight, (double) meteorZ), Material.STONE, (byte) 0);
+	    
 	}
 }
