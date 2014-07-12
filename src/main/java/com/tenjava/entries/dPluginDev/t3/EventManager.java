@@ -13,7 +13,7 @@ public class EventManager{
 			public void run() {
 				Random r = new Random();
 				if (r.nextInt(100) < 30){
-					
+					//Meteor Strike
 				}
 			}
 		};
