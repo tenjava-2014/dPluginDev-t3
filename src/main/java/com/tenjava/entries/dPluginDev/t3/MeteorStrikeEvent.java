@@ -20,6 +20,12 @@ public class MeteorStrikeEvent {
 	    for (Location loc : generateSphere(meteorCenter, Config.meteorSizeRadius, false)){
 	    	loc.getBlock().setType(Material.GRAVEL);
 	    }
+	    
+	    Location explodeLoc = new Location(Config.enabledWorld, meteorX, meteorCenter.getBlockY()-Config.meteorSizeRadius-5, meteorZ);
+	    
+	    while (!explodeLoc.getBlock().getType().isSolid()){
+	    	explodeLoc.add(0, -1, 0);
+	    }
 	}
 	
 	public static List<Location> generateSphere(Location centerBlock, int radius, boolean hollow){
